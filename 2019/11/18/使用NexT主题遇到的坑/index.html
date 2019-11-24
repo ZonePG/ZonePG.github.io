@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="ZonePG blog">
 <meta property="og:description" content="菜单栏显示与连接问题昨天晚上发现，自己的菜单栏图标显示有问题，但若在&#x2F;next的_congfig.yml文件下按照官方document那样设置，图标确实能正常显示。但是，发现点进某一个选项链接会出现Cannot GET &#x2F;home&#x2F;%20&#x2F;这样的错误。找了两小时bug，无奈上床准备休息睡觉。睡前刷一会知乎，搜到这个问题，发现居然是配置的时候多了空格，%20也就是空格的意思。阿，感谢知乎！如下为正确">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-20T04:17:40.918Z">
+<meta property="og:updated_time" content="2019-11-24T02:09:31.323Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -192,7 +192,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             Archives
           </a>
@@ -340,8 +340,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-11-20T12:17:40+08:00">
-                2019-11-20
+              <time title="Post modified" itemprop="dateModified" datetime="2019-11-24T10:09:31+08:00">
+                2019-11-24
               </time>
             
           </span>
@@ -401,7 +401,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  251 words
+                  222 words
                 </span>
               
 
@@ -441,7 +441,7 @@
         <h3 id="菜单栏显示与连接问题"><a href="#菜单栏显示与连接问题" class="headerlink" title="菜单栏显示与连接问题"></a>菜单栏显示与连接问题</h3><p>昨天晚上发现，自己的菜单栏图标显示有问题，但若在/next的_congfig.yml文件下按照官方document那样设置，图标确实能正常显示。但是，发现点进某一个选项链接会出现Cannot GET /home/%20/这样的错误。<br>找了两小时bug，无奈上床准备休息睡觉。睡前刷一会知乎，搜到这个问题，发现居然是配置的时候多了空格，%20也就是空格的意思。阿，感谢知乎！<br>如下为正确配置方式，在/next/_config.yml文件下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: /||home</span><br><span class="line">  about: /about||user</span><br><span class="line">  tags: /tags||tags</span><br><span class="line">  categories: /categories||th</span><br><span class="line">  archives: /archives||archive</span><br><span class="line">#  schedule: /schedule||calendar</span><br><span class="line">#  sitemap: /sitemap.xml || sitemap</span><br><span class="line">#  commonweal: /404/ || heartbeat</span><br><span class="line"></span><br><span class="line"># Enable/Disable menu icons.</span><br><span class="line">menu_icons:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
 <p>不要有空格！不要有空格！！不要有空格！！！</p>
-<h3 id="旁注栏post链接错误"><a href="#旁注栏post链接错误" class="headerlink" title="旁注栏post链接错误"></a>旁注栏post链接错误</h3><p>同上类似，不过又有不同之处。在主文件夹/source/archives的index.html中还要加入``layerout: “archives”```，然后将menu中图标显示设置在menu_icons中即可。</p>
+<h3 id="旁注栏post链接错误"><a href="#旁注栏post链接错误" class="headerlink" title="旁注栏post链接错误"></a>旁注栏post链接错误</h3><p>旁注栏的post与菜单栏的Archives图标不相容bug</p>
 
       
     </div>
@@ -563,9 +563,9 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives">
+                <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -668,7 +668,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">656</span>
+    <span title="Site words total count">649</span>
   
 </div>
 
