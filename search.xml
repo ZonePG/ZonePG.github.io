@@ -2,6 +2,34 @@
 <search>
   <entry>
     <title>寻找两个有序数组的中位数</title>
+    <url>/2020/01/26/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/</url>
+    <content><![CDATA[<p>这是leetcode第五题</p>
+<h5 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h5><ol>
+<li>特判，当 s 的长度为 1 或者 0 时，返回 s。</li>
+<li>初始化最长回文子串的开始索引start和最长长度max = 1</li>
+<li>初始化dp数组，为n*n，dp[i][j]表示s(i~j)是否为回文串。</li>
+<li>初始化dp<ul>
+<li>dp[i][i] = 1，表示单个字符一定是回文串</li>
+<li>若 i &lt; n - 1 &amp;&amp; s[i] == s[i+1]，表示相邻的字符相同。则dp[i][i+1] = True，并更新最长回文子串的开始索引start=i和长度max=2</li>
+</ul>
+</li>
+<li>此时，从长度 sub_len=3 开始遍历，遍历区间[3, n]，表示所有最长子串可能的长度。因为长度1和2的已经在上一步完成了。对于可能的长度sub_len:<ul>
+<li>从索引 i = 0 开始遍历，遍历区间，保证 i+sub_len-1 &lt; len为不越界条件</li>
+<li>令子串右侧索引 j = i + sub_len - 1，若满足s[i]==s[j]&amp;&amp;dp[i+1][j-1]==1。表示子串为回文且s[i]==s[j]，说明s(i~j)也是回文。则此时，更新dp[i][j] = 1，并且更新start=i, max = sub_len。</li>
+</ul>
+</li>
+<li>返回s(start~start+max-1)。<h5 id="c-实现代码"><a href="#c-实现代码" class="headerlink" title="c++实现代码"></a>c++实现代码</h5><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = s.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">if</span> (len == <span class="number">0</span> || len == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line">        <span class="keyword">int</span> start = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> <span class="built_in">max</span> = <span class="number">1</span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; dp(len, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(len));</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            dp[i][i] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (i &lt; len - <span class="number">1</span> &amp;&amp; s[i] == s[i+<span class="number">1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">                start = i;</span><br><span class="line">                <span class="built_in">max</span> = <span class="number">2</span>;</span><br><span class="line">                dp[i][i+<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> sub_len = <span class="number">3</span>; sub_len &lt;= len; sub_len++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i + sub_len - <span class="number">1</span> &lt; len; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> j = i + sub_len - <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span> (s[i] == s[j] &amp;&amp; dp[i+<span class="number">1</span>][j<span class="number">-1</span>] == <span class="number">1</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    start = i;</span><br><span class="line">                    <span class="built_in">max</span> = sub_len;</span><br><span class="line">                    dp[i][j] = <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s.substr(start, <span class="built_in">max</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>动态规划</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>寻找两个有序数组的中位数</title>
     <url>/2020/01/25/%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/</url>
     <content><![CDATA[<p>这是leetcode第四题</p>
 <h5 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h5><p>给定两个大小为 m 和 n 的有序数组 nums1 和 nums2。</p>
