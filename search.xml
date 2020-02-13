@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Special parameters on python3.8</title>
+    <title>Special Parameters On Python3.8</title>
     <url>/2020/02/13/Special_Parameters/</url>
-    <content><![CDATA[<h3 id="Special-parameters"><a href="#Special-parameters" class="headerlink" title="Special parameters"></a>Special parameters</h3><p>For readability and performance, it makes sense to restrict the way arguments can be passed so that a developer need only look at the function definition to determine if items are passed by position, by position or keyword, or by keyword.<br>A function definition may look like:</p>
+    <content><![CDATA[<h3 id="Special-Parameters"><a href="#Special-Parameters" class="headerlink" title="Special Parameters"></a>Special Parameters</h3><p>For readability and performance, it makes sense to restrict the way arguments can be passed so that a developer need only look at the function definition to determine if items are passed by position, by position or keyword, or by keyword.<br>A function definition may look like:</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(pos1, pos2, /, pos_or_kwd, *, kwd1, kwd2)</span>:</span></span><br><span class="line"><span class="comment"># pos1 and pos2 mean positionaly only arguments.</span></span><br><span class="line"><span class="comment"># pos_or_kwd are positonaly or keyword arguments.</span></span><br><span class="line"><span class="comment"># And the rest of all are keyword only arguments.</span></span><br></pre></td></tr></table></figure>
 <p>where <code>/</code> and <code>*</code> are optional. If used, these symbols indicate the kind of parameter by how the arguments may be passed to the function: positional-only, positional-or-keyword, and keyword-only. Keyword parameters are also referred to as named parameters.</p>
 <h4 id="Positional-or-Keyword-Arguments"><a href="#Positional-or-Keyword-Arguments" class="headerlink" title="Positional-or-Keyword Arguments"></a>Positional-or-Keyword Arguments</h4><p>If <code>/</code> and <code>*</code> are not present in the function definition, arguments may be passed to a function by position or by keyword.</p>
