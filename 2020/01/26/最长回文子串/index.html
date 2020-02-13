@@ -82,12 +82,12 @@
 <meta name="description" content="这是leetcode第五题 算法思路 特判，当 s 的长度为 1 或者 0 时，返回 s。 初始化最长回文子串的开始索引start和最长长度max = 1 初始化dp数组，为n*n，dp[i][j]表示s(i~j)是否为回文串。 初始化dp dp[i][i] = 1，表示单个字符一定是回文串 若 i &amp;lt; n - 1 &amp;amp;&amp;amp; s[i] == s[i+1]，表示相邻的字符相同。则d">
 <meta name="keywords" content="动态规划">
 <meta property="og:type" content="article">
-<meta property="og:title" content="寻找两个有序数组的中位数">
+<meta property="og:title" content="最长回文子串">
 <meta property="og:url" content="https:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;26&#x2F;%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2&#x2F;index.html">
 <meta property="og:site_name" content="ZONEPG BLOG">
 <meta property="og:description" content="这是leetcode第五题 算法思路 特判，当 s 的长度为 1 或者 0 时，返回 s。 初始化最长回文子串的开始索引start和最长长度max = 1 初始化dp数组，为n*n，dp[i][j]表示s(i~j)是否为回文串。 初始化dp dp[i][i] = 1，表示单个字符一定是回文串 若 i &amp;lt; n - 1 &amp;amp;&amp;amp; s[i] == s[i+1]，表示相邻的字符相同。则d">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-26T14:08:24.019Z">
+<meta property="og:updated_time" content="2020-02-09T09:05:30.109Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -124,7 +124,7 @@
 
 
 
-  <title>寻找两个有序数组的中位数 | ZONEPG BLOG</title>
+  <title>最长回文子串 | ZONEPG BLOG</title>
   
 
 
@@ -192,19 +192,9 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archives"></i> <br />
             
             Archives
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            Tags
           </a>
         </li>
       
@@ -312,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">寻找两个有序数组的中位数</h1>
+          <h1 class="post-title" itemprop="name headline">最长回文子串</h1>
         
 
         <div class="post-meta">
@@ -340,8 +330,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2020-01-26T22:08:24+08:00">
-                2020-01-26
+              <time title="Post modified" itemprop="dateModified" datetime="2020-02-09T17:05:30+08:00">
+                2020-02-09
               </time>
             
           </span>
@@ -376,7 +366,7 @@
 
           
           
-             <span id="/2020/01/26/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/" class="leancloud_visitors" data-flag-title="寻找两个有序数组的中位数">
+             <span id="/2020/01/26/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/" class="leancloud_visitors" data-flag-title="最长回文子串">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -453,7 +443,8 @@
 <li>令子串右侧索引 j = i + sub_len - 1，若满足s[i]==s[j]&amp;&amp;dp[i+1][j-1]==1。表示子串为回文且s[i]==s[j]，说明s(i~j)也是回文。则此时，更新dp[i][j] = 1，并且更新start=i, max = sub_len。</li>
 </ul>
 </li>
-<li>返回s(start~start+max-1)。<h5 id="c-实现代码"><a href="#c-实现代码" class="headerlink" title="c++实现代码"></a>c++实现代码</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = s.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">if</span> (len == <span class="number">0</span> || len == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line">        <span class="keyword">int</span> start = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> <span class="built_in">max</span> = <span class="number">1</span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; dp(len, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(len));</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            dp[i][i] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (i &lt; len - <span class="number">1</span> &amp;&amp; s[i] == s[i+<span class="number">1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">                start = i;</span><br><span class="line">                <span class="built_in">max</span> = <span class="number">2</span>;</span><br><span class="line">                dp[i][i+<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> sub_len = <span class="number">3</span>; sub_len &lt;= len; sub_len++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i + sub_len - <span class="number">1</span> &lt; len; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> j = i + sub_len - <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span> (s[i] == s[j] &amp;&amp; dp[i+<span class="number">1</span>][j<span class="number">-1</span>] == <span class="number">1</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    start = i;</span><br><span class="line">                    <span class="built_in">max</span> = sub_len;</span><br><span class="line">                    dp[i][j] = <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s.substr(start, <span class="built_in">max</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+<li>返回s(start~start+max-1)。<h5 id="c-实现代码"><a href="#c-实现代码" class="headerlink" title="c++实现代码"></a>c++实现代码</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = s.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">if</span> (len == <span class="number">0</span> || len == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line">        <span class="keyword">int</span> start = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> <span class="built_in">max</span> = <span class="number">1</span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; dp(len, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(len));</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            dp[i][i] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (i &lt; len - <span class="number">1</span> &amp;&amp; s[i] == s[i+<span class="number">1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">                start = i;</span><br><span class="line">                <span class="built_in">max</span> = <span class="number">2</span>;</span><br><span class="line">                dp[i][i+<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> sub_len = <span class="number">3</span>; sub_len &lt;= len; sub_len++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i + sub_len - <span class="number">1</span> &lt; len; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> j = i + sub_len - <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span> (s[i] == s[j] &amp;&amp; dp[i+<span class="number">1</span>][j<span class="number">-1</span>] == <span class="number">1</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    start = i;</span><br><span class="line">                    <span class="built_in">max</span> = sub_len;</span><br><span class="line">                    dp[i][j] = <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s.substr(start, <span class="built_in">max</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
 
       
@@ -572,7 +563,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives">
+                <a href="/archives%7C%7Carchives">
               
                   <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">posts</span>
@@ -595,10 +586,10 @@
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
+                
                   <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">tags</span>
-                </a>
+                
               </div>
             
 
