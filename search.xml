@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Looping Techniques</title>
+    <url>/2020/02/14/Looping%20Techniques/</url>
+    <content><![CDATA[<h3 id="Looping-Techniques"><a href="#Looping-Techniques" class="headerlink" title="Looping Techniques"></a>Looping Techniques</h3><p>When looping through dictionaries, the key and corresponding value can be retrieved at the same time using the <code>items()</code> method.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">knights = &#123;<span class="string">'gallahad'</span>: <span class="string">'the pure'</span>, <span class="string">'robin'</span>: <span class="string">'the brave'</span>&#125;</span><br><span class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> knight.items():</span><br><span class="line">    print(k, v)</span><br></pre></td></tr></table></figure>
+
+<pre><code>gallahad the pure
+robin the brave</code></pre><p>When looping through a sequence, the position index and corresponding value can be retrieved at the same time using the <code>enumerate()</code> function.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i, v <span class="keyword">in</span> enumerate([<span class="string">'tic'</span>, <span class="string">'tac'</span>, <span class="string">'toe'</span>]):</span><br><span class="line">    print(i, v)</span><br></pre></td></tr></table></figure>
+
+<pre><code>0 tic
+1 tac
+2 toe</code></pre><p>To loop over two or more sequences at the same time, the entries can be paired with the <code>zip()</code> function.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">questions = [<span class="string">'name'</span>, <span class="string">'quest'</span>, <span class="string">'favorite color'</span>]</span><br><span class="line">answers = [<span class="string">'lancelot'</span>, <span class="string">'the holy grail'</span>, <span class="string">'blue'</span>]</span><br><span class="line"><span class="keyword">for</span> q, a <span class="keyword">in</span> zip(questions, answers):</span><br><span class="line">    print(<span class="string">'What is your &#123;0&#125;? It is &#123;1&#125;.'</span>.format(q, a))</span><br></pre></td></tr></table></figure>
+
+<pre><code>What is your name? It is lancelot.
+What is your quest? It is the holy grail.
+What is your favorite color? It is blue.</code></pre><p>To loop over a sequence in reverse, first specify the sequence in a forward direction and then call the <code>reversed()</code> function.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> reversed(range(<span class="number">1</span>, <span class="number">10</span>, <span class="number">2</span>)):</span><br><span class="line">    print(i)</span><br></pre></td></tr></table></figure>
+
+<pre><code>9
+7
+5
+3
+1</code></pre><p>To loop over a sequence in sorted order, use the <code>sorted()</code> function which returns a new sorted list while leaving the source unaltered.</p>
+<p>To loop over a sequence in sorted order, use the sorted() function which returns a new sorted list while leaving the source unaltered.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">basket = [<span class="string">'apple'</span>, <span class="string">'orange'</span>, <span class="string">'apple'</span>, <span class="string">'pear'</span>, <span class="string">'orange'</span>, <span class="string">'banana'</span>]</span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> sorted(set(basket)):</span><br><span class="line">    print(f)</span><br></pre></td></tr></table></figure>
+
+<pre><code>apple
+banana
+orange
+pear</code></pre><p>It is sometimes tempting to change a list while you are looping over it; however, it is often simpler and safer to create a new list instead.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line">raw_data = [<span class="number">56.2</span>, float(<span class="string">'NaN'</span>), <span class="number">51.7</span>, <span class="number">55.3</span>, <span class="number">52.5</span>, float(<span class="string">'NaN'</span>), <span class="number">47.8</span>]</span><br><span class="line">filter_data = []</span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> raw_data:</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> math.isnan(value):</span><br><span class="line">        filter_data.append(value)</span><br><span class="line"></span><br><span class="line">filter_data</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[56.2, 51.7, 55.3, 52.5, 47.8]</code></pre>]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Unpacking Argument Lists</title>
     <url>/2020/02/14/UnpackingArgumentLists/</url>
     <content><![CDATA[<h3 id="Unpacking-Argument-Lists"><a href="#Unpacking-Argument-Lists" class="headerlink" title="Unpacking Argument Lists"></a>Unpacking Argument Lists</h3><p>The reverse situation occurs when the arguments are already in a list or tuple but need to be unpacked for a function call requiring separate positional arguments. For instance, the built-in <code>range()</code> function expects separate start and stop arguments. If they are not available separately, write the function call with the <code>*</code>-operator to unpack the arguments out of a list or tuple:</p>

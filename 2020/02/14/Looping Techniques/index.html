@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="Unpacking Argument ListsThe reverse situation occurs when the arguments are already in a list or tuple but need to be unpacked for a function call requiring separate positional arguments. For instance">
+<meta name="description" content="Looping TechniquesWhen looping through dictionaries, the key and corresponding value can be retrieved at the same time using the items() method. 123knights = &amp;#123;&amp;apos;gallahad&amp;apos;: &amp;apos;the pure&amp;apos;, &amp;apos;robin&amp;apos;: &amp;apos;th">
 <meta name="keywords" content="邹鹏的博客,邹鹏,博客">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Unpacking Argument Lists">
-<meta property="og:url" content="https:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;14&#x2F;UnpackingArgumentLists&#x2F;index.html">
+<meta property="og:title" content="Looping Techniques">
+<meta property="og:url" content="https:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;14&#x2F;Looping%20Techniques&#x2F;index.html">
 <meta property="og:site_name" content="ZONEPG BLOG">
-<meta property="og:description" content="Unpacking Argument ListsThe reverse situation occurs when the arguments are already in a list or tuple but need to be unpacked for a function call requiring separate positional arguments. For instance">
+<meta property="og:description" content="Looping TechniquesWhen looping through dictionaries, the key and corresponding value can be retrieved at the same time using the items() method. 123knights = &amp;#123;&amp;apos;gallahad&amp;apos;: &amp;apos;the pure&amp;apos;, &amp;apos;robin&amp;apos;: &amp;apos;th">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-02-14T09:47:40.914Z">
+<meta property="og:updated_time" content="2020-02-14T15:44:13.611Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="https://yoursite.com/2020/02/14/UnpackingArgumentLists/"/>
+  <link rel="canonical" href="https://yoursite.com/2020/02/14/Looping Techniques/"/>
 
 
 
 
 
-  <title>Unpacking Argument Lists | ZONEPG BLOG</title>
+  <title>Looping Techniques | ZONEPG BLOG</title>
   
 
 
@@ -285,7 +285,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yoursite.com/2020/02/14/UnpackingArgumentLists/">
+    <link itemprop="mainEntityOfPage" href="https://yoursite.com/2020/02/14/Looping%20Techniques/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZonePG">
@@ -302,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Unpacking Argument Lists</h1>
+          <h1 class="post-title" itemprop="name headline">Looping Techniques</h1>
         
 
         <div class="post-meta">
@@ -314,7 +314,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-14T17:30:54+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-14T23:44:00+08:00">
                 2020-02-14
               </time>
             
@@ -330,7 +330,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2020-02-14T17:47:40+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2020-02-14T23:44:13+08:00">
                 2020-02-14
               </time>
             
@@ -366,7 +366,7 @@
 
           
           
-             <span id="/2020/02/14/UnpackingArgumentLists/" class="leancloud_visitors" data-flag-title="Unpacking Argument Lists">
+             <span id="/2020/02/14/Looping%20Techniques/" class="leancloud_visitors" data-flag-title="Looping Techniques">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -391,7 +391,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  166 words
+                  325 words
                 </span>
               
 
@@ -407,7 +407,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1 min
+                  2 min
                 </span>
               
             </div>
@@ -428,21 +428,41 @@
       
 
       
-        <h3 id="Unpacking-Argument-Lists"><a href="#Unpacking-Argument-Lists" class="headerlink" title="Unpacking Argument Lists"></a>Unpacking Argument Lists</h3><p>The reverse situation occurs when the arguments are already in a list or tuple but need to be unpacked for a function call requiring separate positional arguments. For instance, the built-in <code>range()</code> function expects separate start and stop arguments. If they are not available separately, write the function call with the <code>*</code>-operator to unpack the arguments out of a list or tuple:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list(range(<span class="number">3</span>, <span class="number">6</span>))  <span class="comment"># normal call with separate arguments</span></span><br></pre></td></tr></table></figure>
+        <h3 id="Looping-Techniques"><a href="#Looping-Techniques" class="headerlink" title="Looping Techniques"></a>Looping Techniques</h3><p>When looping through dictionaries, the key and corresponding value can be retrieved at the same time using the <code>items()</code> method.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">knights = &#123;<span class="string">'gallahad'</span>: <span class="string">'the pure'</span>, <span class="string">'robin'</span>: <span class="string">'the brave'</span>&#125;</span><br><span class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> knight.items():</span><br><span class="line">    print(k, v)</span><br></pre></td></tr></table></figure>
+
+<pre><code>gallahad the pure
+robin the brave</code></pre><p>When looping through a sequence, the position index and corresponding value can be retrieved at the same time using the <code>enumerate()</code> function.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i, v <span class="keyword">in</span> enumerate([<span class="string">'tic'</span>, <span class="string">'tac'</span>, <span class="string">'toe'</span>]):</span><br><span class="line">    print(i, v)</span><br></pre></td></tr></table></figure>
+
+<pre><code>0 tic
+1 tac
+2 toe</code></pre><p>To loop over two or more sequences at the same time, the entries can be paired with the <code>zip()</code> function.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">questions = [<span class="string">'name'</span>, <span class="string">'quest'</span>, <span class="string">'favorite color'</span>]</span><br><span class="line">answers = [<span class="string">'lancelot'</span>, <span class="string">'the holy grail'</span>, <span class="string">'blue'</span>]</span><br><span class="line"><span class="keyword">for</span> q, a <span class="keyword">in</span> zip(questions, answers):</span><br><span class="line">    print(<span class="string">'What is your &#123;0&#125;? It is &#123;1&#125;.'</span>.format(q, a))</span><br></pre></td></tr></table></figure>
+
+<pre><code>What is your name? It is lancelot.
+What is your quest? It is the holy grail.
+What is your favorite color? It is blue.</code></pre><p>To loop over a sequence in reverse, first specify the sequence in a forward direction and then call the <code>reversed()</code> function.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> reversed(range(<span class="number">1</span>, <span class="number">10</span>, <span class="number">2</span>)):</span><br><span class="line">    print(i)</span><br></pre></td></tr></table></figure>
+
+<pre><code>9
+7
+5
+3
+1</code></pre><p>To loop over a sequence in sorted order, use the <code>sorted()</code> function which returns a new sorted list while leaving the source unaltered.</p>
+<p>To loop over a sequence in sorted order, use the sorted() function which returns a new sorted list while leaving the source unaltered.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">basket = [<span class="string">'apple'</span>, <span class="string">'orange'</span>, <span class="string">'apple'</span>, <span class="string">'pear'</span>, <span class="string">'orange'</span>, <span class="string">'banana'</span>]</span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> sorted(set(basket)):</span><br><span class="line">    print(f)</span><br></pre></td></tr></table></figure>
+
+<pre><code>apple
+banana
+orange
+pear</code></pre><p>It is sometimes tempting to change a list while you are looping over it; however, it is often simpler and safer to create a new list instead.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line">raw_data = [<span class="number">56.2</span>, float(<span class="string">'NaN'</span>), <span class="number">51.7</span>, <span class="number">55.3</span>, <span class="number">52.5</span>, float(<span class="string">'NaN'</span>), <span class="number">47.8</span>]</span><br><span class="line">filter_data = []</span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> raw_data:</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> math.isnan(value):</span><br><span class="line">        filter_data.append(value)</span><br><span class="line"></span><br><span class="line">filter_data</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>[3, 4, 5]</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">args = [<span class="number">3</span>, <span class="number">6</span>]</span><br><span class="line">list(range(*args)) <span class="comment"># call with arguments unpacked from a lisat</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>[3, 4, 5]</code></pre><p>In the same fashion, dictionaries can deliver keyword arguments with the <code>**</code>-operator:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">parrot</span><span class="params">(voltage, state=<span class="string">'a stiff'</span>, action=<span class="string">'voom'</span>)</span>:</span></span><br><span class="line">    print(<span class="string">"-- This parrot wouldn't"</span>, action, end=<span class="string">' '</span>)</span><br><span class="line">    print(<span class="string">"if you put"</span>, voltage, <span class="string">"volts through it."</span>, end=<span class="string">' '</span>)</span><br><span class="line">    print(<span class="string">"E's"</span>, state, <span class="string">"!"</span>)</span><br><span class="line"></span><br><span class="line">d = &#123;<span class="string">"voltage"</span>: <span class="string">"four million"</span>, <span class="string">"state"</span>: <span class="string">"bleedin' demised"</span>, <span class="string">"action"</span>: <span class="string">"VOOM"</span>&#125;</span><br><span class="line">parrot(**d)</span><br></pre></td></tr></table></figure>
-
-<pre><code>-- This parrot wouldn&apos;t VOOM if you put four million volts through it. E&apos;s bleedin&apos; demised !</code></pre>
+<pre><code>[56.2, 51.7, 55.3, 52.5, 47.8]</code></pre>
       
     </div>
     
@@ -466,8 +486,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/02/14/ListComprehensions/" rel="next" title="List Comprehensions">
-                <i class="fa fa-chevron-left"></i> List Comprehensions
+              <a href="/2020/02/14/UnpackingArgumentLists/" rel="next" title="Unpacking Argument Lists">
+                <i class="fa fa-chevron-left"></i> Unpacking Argument Lists
               </a>
             
           </div>
@@ -475,10 +495,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/02/14/Looping%20Techniques/" rel="prev" title="Looping Techniques">
-                Looping Techniques <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -615,7 +631,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Unpacking-Argument-Lists"><span class="nav-number">1.</span> <span class="nav-text">Unpacking Argument Lists</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Looping-Techniques"><span class="nav-number">1.</span> <span class="nav-text">Looping Techniques</span></a></li></ol></div>
             
 
           </div>
