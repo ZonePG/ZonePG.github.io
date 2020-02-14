@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Unpacking Argument Lists</title>
+    <url>/2020/02/14/UnpackingArgumentLists/</url>
+    <content><![CDATA[<h3 id="Unpacking-Argument-Lists"><a href="#Unpacking-Argument-Lists" class="headerlink" title="Unpacking Argument Lists"></a>Unpacking Argument Lists</h3><p>The reverse situation occurs when the arguments are already in a list or tuple but need to be unpacked for a function call requiring separate positional arguments. For instance, the built-in <code>range()</code> function expects separate start and stop arguments. If they are not available separately, write the function call with the <code>*</code>-operator to unpack the arguments out of a list or tuple:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list(range(<span class="number">3</span>, <span class="number">6</span>))  <span class="comment"># normal call with separate arguments</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[3, 4, 5]</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">args = [<span class="number">3</span>, <span class="number">6</span>]</span><br><span class="line">list(range(*args)) <span class="comment"># call with arguments unpacked from a lisat</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[3, 4, 5]</code></pre><p>In the same fashion, dictionaries can deliver keyword arguments with the <code>**</code>-operator:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">parrot</span><span class="params">(voltage, state=<span class="string">'a stiff'</span>, action=<span class="string">'voom'</span>)</span>:</span></span><br><span class="line">    print(<span class="string">"-- This parrot wouldn't"</span>, action, end=<span class="string">' '</span>)</span><br><span class="line">    print(<span class="string">"if you put"</span>, voltage, <span class="string">"volts through it."</span>, end=<span class="string">' '</span>)</span><br><span class="line">    print(<span class="string">"E's"</span>, state, <span class="string">"!"</span>)</span><br><span class="line"></span><br><span class="line">d = &#123;<span class="string">"voltage"</span>: <span class="string">"four million"</span>, <span class="string">"state"</span>: <span class="string">"bleedin' demised"</span>, <span class="string">"action"</span>: <span class="string">"VOOM"</span>&#125;</span><br><span class="line">parrot(**d)</span><br></pre></td></tr></table></figure>
+
+<pre><code>-- This parrot wouldn&apos;t VOOM if you put four million volts through it. E&apos;s bleedin&apos; demised !</code></pre>]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>List Comprehensions</title>
     <url>/2020/02/14/ListComprehensions/</url>
     <content><![CDATA[<h3 id="List-Comprehensions"><a href="#List-Comprehensions" class="headerlink" title="List Comprehensions"></a>List Comprehensions</h3><p><strong>List comprehensions</strong> provide a concise way to create lists. Common applications are to make new lists where each element is the result of some operations applied to each member of another sequence or iterable, or to create a subsequence of those elements that satisfy a certain condition.</p>
@@ -101,7 +123,8 @@ SyntaxError: invalid syntax</code></pre><figure class="highlight python"><table>
 
 
 
-<pre><code>[(1, 5, 9), (2, 6, 10), (3, 7, 11), (4, 8, 12)]</code></pre>]]></content>
+<pre><code>[(1, 5, 9), (2, 6, 10), (3, 7, 11), (4, 8, 12)]</code></pre><p>More unpacking arguments lists refer to <a href="http://www.zonepg.com/2019/02/14/UnpackingArgumentLists/" target="_blank" rel="noopener">Unpacking Argument Lists</a></p>
+]]></content>
       <categories>
         <category>Python</category>
       </categories>
@@ -446,28 +469,6 @@ SyntaxError: invalid syntax</code></pre><figure class="highlight python"><table>
 ]]></content>
       <categories>
         <category>feelings</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Unpacking Argument Lists</title>
-    <url>/2019/02/14/UnpackingArgumentLists/</url>
-    <content><![CDATA[<h3 id="Unpacking-Argument-Lists"><a href="#Unpacking-Argument-Lists" class="headerlink" title="Unpacking Argument Lists"></a>Unpacking Argument Lists</h3><p>The reverse situation occurs when the arguments are already in a list or tuple but need to be unpacked for a function call requiring separate positional arguments. For instance, the built-in <code>range()</code> function expects separate start and stop arguments. If they are not available separately, write the function call with the <code>*</code>-operator to unpack the arguments out of a list or tuple:</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list(range(<span class="number">3</span>, <span class="number">6</span>))  <span class="comment"># normal call with separate arguments</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>[3, 4, 5]</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">args = [<span class="number">3</span>, <span class="number">6</span>]</span><br><span class="line">list(range(*args)) <span class="comment"># call with arguments unpacked from a lisat</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>[3, 4, 5]</code></pre><p>In the same fashion, dictionaries can deliver keyword arguments with the <code>**</code>-operator:</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">parrot</span><span class="params">(voltage, state=<span class="string">'a stiff'</span>, action=<span class="string">'voom'</span>)</span>:</span></span><br><span class="line">    print(<span class="string">"-- This parrot wouldn't"</span>, action, end=<span class="string">' '</span>)</span><br><span class="line">    print(<span class="string">"if you put"</span>, voltage, <span class="string">"volts through it."</span>, end=<span class="string">' '</span>)</span><br><span class="line">    print(<span class="string">"E's"</span>, state, <span class="string">"!"</span>)</span><br><span class="line"></span><br><span class="line">d = &#123;<span class="string">"voltage"</span>: <span class="string">"four million"</span>, <span class="string">"state"</span>: <span class="string">"bleedin' demised"</span>, <span class="string">"action"</span>: <span class="string">"VOOM"</span>&#125;</span><br><span class="line">parrot(**d)</span><br></pre></td></tr></table></figure>
-
-<pre><code>-- This parrot wouldn&apos;t VOOM if you put four million volts through it. E&apos;s bleedin&apos; demised !</code></pre>]]></content>
-      <categories>
-        <category>Python</category>
       </categories>
   </entry>
 </search>
