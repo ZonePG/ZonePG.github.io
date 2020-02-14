@@ -1,6 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>List Comprehensions</title>
+    <url>/2020/02/14/ListComprehensions/</url>
+    <content><![CDATA[<h3 id="List-Comprehensions"><a href="#List-Comprehensions" class="headerlink" title="List Comprehensions"></a>List Comprehensions</h3><p><strong>List comprehensions</strong> provide a concise way to create lists. Common applications are to make new lists where each element is the result of some operations applied to each member of another sequence or iterable, or to create a subsequence of those elements that satisfy a certain condition.</p>
+<p>For example, assume we want to create a list of squares, like:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">squares = []</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">    squares.append(x**<span class="number">2</span>)</span><br><span class="line">    </span><br><span class="line">squares</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</code></pre><p>Note that this creates (or overwrites) a variable named x that still exists after the loop completes. We can calculate the list of squares without any side effects using:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">squares = list(map(<span class="keyword">lambda</span> x: x**<span class="number">2</span>, range(<span class="number">10</span>)))</span><br></pre></td></tr></table></figure>
+
+<p>or, equivalently:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">squares = [x**<span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>)]</span><br></pre></td></tr></table></figure>
+
+<p>which is more concise and readable.</p>
+<p>A list comprehension consists of brackets containing an expression followed by a for clause, then zero or more for or if clauses. The result will be a new list resulting from evaluating the expression in the context of the for and if clauses which follow it. For example, this listcomp combines the elements of two lists if they are not equal:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">[(x, y) <span class="keyword">for</span> x <span class="keyword">in</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>] <span class="keyword">for</span> y <span class="keyword">in</span> [<span class="number">3</span>,<span class="number">1</span>,<span class="number">4</span>] <span class="keyword">if</span> x != y]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]</code></pre><p>and it’s equivalent to:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">combs = []</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]:</span><br><span class="line">    <span class="keyword">for</span> y <span class="keyword">in</span> [<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>]:</span><br><span class="line">        <span class="keyword">if</span> x != y:</span><br><span class="line">            combs.append((x, y))</span><br><span class="line"></span><br><span class="line">combs</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]</code></pre><p>Note how the order of the <code>for</code> and <code>if</code> statements is the same in both these snippets.</p>
+<p>If the expression is a tuple (e.g. the <code>(x, y)</code> in the previous example), it must be parenthesized.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">vec = [<span class="number">-4</span>, <span class="number">-2</span>, <span class="number">0</span>, <span class="number">2</span>, <span class="number">4</span>]</span><br><span class="line"><span class="comment"># create a new list with the values doubled</span></span><br><span class="line">[x*<span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> vec]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[-8, -4, 0, 4, 8]</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># filter the list to exclude negative numbers</span></span><br><span class="line">[x <span class="keyword">for</span> x <span class="keyword">in</span> vec <span class="keyword">if</span> x &gt;= <span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[0, 2, 4]</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># apply a function to all the elements</span></span><br><span class="line">[abs(x) <span class="keyword">for</span> x <span class="keyword">in</span> vec]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[4, 2, 0, 2, 4]</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># call a method on each element</span></span><br><span class="line">freshfruit = [<span class="string">'  banana'</span>, <span class="string">'  loganberry '</span>, <span class="string">'passion fruit  '</span>]</span><br><span class="line">[weapon.strip() <span class="keyword">for</span> weapon <span class="keyword">in</span> freshfruit]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[&apos;banana&apos;, &apos;loganberry&apos;, &apos;passion fruit&apos;]</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#create a list of 2-tuples like (number, square)</span></span><br><span class="line">[(x, x**<span class="number">2</span>) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">6</span>)]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[(0, 0), (1, 1), (2, 4), (3, 9), (4, 16), (5, 25)]</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># the tuple must be parenthesized, otherwise an error is raised</span></span><br><span class="line">[x, x**<span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">6</span>)]</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>  File &quot;&lt;ipython-input-88-702d12ece8a4&gt;&quot;, line 2
+    [x, x**2 for x in range(6)]
+               ^
+SyntaxError: invalid syntax</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># flatten a list using a listcomp with two 'for'</span></span><br><span class="line">vec = [[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>], [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>], [<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]]</span><br><span class="line">[num <span class="keyword">for</span> elem <span class="keyword">in</span> vec <span class="keyword">for</span> num <span class="keyword">in</span> elem]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[1, 2, 3, 4, 5, 6, 7, 8, 9]</code></pre><p>List comprehensions can contain complex expressions and nested functions:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> pi</span><br><span class="line">[str(round(pi, i)) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">6</span>)]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[&apos;3.1&apos;, &apos;3.14&apos;, &apos;3.142&apos;, &apos;3.1416&apos;, &apos;3.14159&apos;]</code></pre><h3 id="Nested-List-Comprehensions"><a href="#Nested-List-Comprehensions" class="headerlink" title="Nested List Comprehensions"></a>Nested List Comprehensions</h3><p>The initial expression in a list comprehension can be any arbitrary expression, including another list comprehension.</p>
+<p>Consider the following example of a 3x4 matrix implemented as a list of 3 lists of length 4:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">matrix = [</span><br><span class="line">    [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>],</span><br><span class="line">    [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>],</span><br><span class="line">    [<span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>],</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>The following list comprehension will transpose rows and columns:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">[[row[i] <span class="keyword">for</span> row <span class="keyword">in</span> matrix] <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>)]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[[1, 5, 9], [2, 6, 10], [3, 7, 11], [4, 8, 12]]</code></pre><p>As we saw in the previous section, the nested listcomp is evaluated in the context of the for that follows it, so this example is equivalent to:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">transposed = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">    transposed.append([row[i] <span class="keyword">for</span> row <span class="keyword">in</span> matrix])</span><br><span class="line">    </span><br><span class="line">transposed</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[[1, 5, 9], [2, 6, 10], [3, 7, 11], [4, 8, 12]]</code></pre><p>which, in turn, is the same as:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">transposed = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">    <span class="comment"># the following 3 lines implement the nested listcom</span></span><br><span class="line">    transposed_row = []</span><br><span class="line">    <span class="keyword">for</span> row <span class="keyword">in</span> matrix:</span><br><span class="line">        transposed_row.append(row[i])</span><br><span class="line">    transposed.append(transposed_row)</span><br><span class="line"></span><br><span class="line">transposed</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[[1, 5, 9], [2, 6, 10], [3, 7, 11], [4, 8, 12]]</code></pre><p>In the real world, you should prefer built-in functions to complex flow statements. The zip() function would do a great job for this use case:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list(zip(*matrix))    <span class="comment">#  # call with arguments unpacked from a list</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[(1, 5, 9), (2, 6, 10), (3, 7, 11), (4, 8, 12)]</code></pre>]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Special Parameters On Python3.8</title>
     <url>/2020/02/13/Special_Parameters/</url>
     <content><![CDATA[<h3 id="Special-Parameters"><a href="#Special-Parameters" class="headerlink" title="Special Parameters"></a>Special Parameters</h3><p>For readability and performance, it makes sense to restrict the way arguments can be passed so that a developer need only look at the function definition to determine if items are passed by position, by position or keyword, or by keyword.<br>A function definition may look like:</p>
@@ -340,6 +446,28 @@
 ]]></content>
       <categories>
         <category>feelings</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Unpacking Argument Lists</title>
+    <url>/2019/02/14/UnpackingArgumentLists/</url>
+    <content><![CDATA[<h3 id="Unpacking-Argument-Lists"><a href="#Unpacking-Argument-Lists" class="headerlink" title="Unpacking Argument Lists"></a>Unpacking Argument Lists</h3><p>The reverse situation occurs when the arguments are already in a list or tuple but need to be unpacked for a function call requiring separate positional arguments. For instance, the built-in <code>range()</code> function expects separate start and stop arguments. If they are not available separately, write the function call with the <code>*</code>-operator to unpack the arguments out of a list or tuple:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list(range(<span class="number">3</span>, <span class="number">6</span>))  <span class="comment"># normal call with separate arguments</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[3, 4, 5]</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">args = [<span class="number">3</span>, <span class="number">6</span>]</span><br><span class="line">list(range(*args)) <span class="comment"># call with arguments unpacked from a lisat</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[3, 4, 5]</code></pre><p>In the same fashion, dictionaries can deliver keyword arguments with the <code>**</code>-operator:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">parrot</span><span class="params">(voltage, state=<span class="string">'a stiff'</span>, action=<span class="string">'voom'</span>)</span>:</span></span><br><span class="line">    print(<span class="string">"-- This parrot wouldn't"</span>, action, end=<span class="string">' '</span>)</span><br><span class="line">    print(<span class="string">"if you put"</span>, voltage, <span class="string">"volts through it."</span>, end=<span class="string">' '</span>)</span><br><span class="line">    print(<span class="string">"E's"</span>, state, <span class="string">"!"</span>)</span><br><span class="line"></span><br><span class="line">d = &#123;<span class="string">"voltage"</span>: <span class="string">"four million"</span>, <span class="string">"state"</span>: <span class="string">"bleedin' demised"</span>, <span class="string">"action"</span>: <span class="string">"VOOM"</span>&#125;</span><br><span class="line">parrot(**d)</span><br></pre></td></tr></table></figure>
+
+<pre><code>-- This parrot wouldn&apos;t VOOM if you put four million volts through it. E&apos;s bleedin&apos; demised !</code></pre>]]></content>
+      <categories>
+        <category>Python</category>
       </categories>
   </entry>
 </search>
