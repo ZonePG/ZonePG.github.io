@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>std::signal</title>
+    <url>/2020/02/16/signal_in_cpp/</url>
+    <content><![CDATA[<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p>There are some fantastic explanation details on these websites:</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=83M5-NPDeWs" target="_blank" rel="noopener">https://www.youtube.com/watch?v=83M5-NPDeWs</a></li>
+<li><a href="https://en.cppreference.com/w/cpp/utility/program/signal" target="_blank" rel="noopener">https://en.cppreference.com/w/cpp/utility/program/signal</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Looping Techniques</title>
     <url>/2020/02/14/Looping%20Techniques/</url>
     <content><![CDATA[<h3 id="Looping-Techniques"><a href="#Looping-Techniques" class="headerlink" title="Looping Techniques"></a>Looping Techniques</h3><p>When looping through dictionaries, the key and corresponding value can be retrieved at the same time using the <code>items()</code> method.</p>
@@ -208,19 +221,6 @@ SyntaxError: invalid syntax</code></pre><figure class="highlight python"><table>
 ]]></content>
       <categories>
         <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>std::signal</title>
-    <url>/2020/02/13/signal_in_cpp/</url>
-    <content><![CDATA[<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p>There are some fantastic explanation details on these websites:</p>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=83M5-NPDeWs" target="_blank" rel="noopener">https://www.youtube.com/watch?v=83M5-NPDeWs</a></li>
-<li><a href="https://en.cppreference.com/w/cpp/utility/program/signal" target="_blank" rel="noopener">https://en.cppreference.com/w/cpp/utility/program/signal</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>C++</category>
       </categories>
   </entry>
   <entry>
