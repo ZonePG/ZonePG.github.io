@@ -8,6 +8,8 @@
 <li>首先！！执行<code>./clash -d .</code>得到的config.yaml文件的内容，这个才是我们所需要的配置文件。我们将供应商购买得到的.yml文件的内容复制到这个文件夹里。。</li>
 <li>由于速度问题(你又懂的)，<code>./clash -d .</code>得到的Counry.mmdb文件的内容不全，我们可以自行去网上下载现成的Country.mmdb文件。这里给出一个能下载的地方<a href="https://github.com/JSEcoin/server/blob/master/geoip/GeoIP2-Country.mmdb" target="_blank" rel="noopener">点击这里</a>，将得到的GeoIp2-Country.mmdb更名为Country.mmdb即可。</li>
 </ul>
+<h3 id="让我的clash后台运行"><a href="#让我的clash后台运行" class="headerlink" title="让我的clash后台运行"></a>让我的clash后台运行</h3><p><code>nohup ./clash -d . &amp;</code></p>
+<h3 id="杀死我的clash"><a href="#杀死我的clash" class="headerlink" title="杀死我的clash"></a>杀死我的clash</h3><p><code>ps -ef | grep name</code><br><code>kill -9 id</code></p>
 ]]></content>
       <categories>
         <category>config</category>

@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="ZONEPG BLOG">
 <meta property="og:description" content="clash配置问题由于想学习Go语言(配置个环境都被qiang了)，恩，外面的世界必不可少。。你懂的除了ubuntu，自己的ios、win10都能探索世界了。。ubuntu捣鼓了一周，而自己日常使用ubuntu，clash问题硬是没有解决，困惑不已。今天上午加中午，各种尝试，github搜索各种issue，终于从坑里爬出来了，记录一下。  首先！！执行.&#x2F;clash -d .得到的config.y">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-03-19T05:13:33.001Z">
+<meta property="og:updated_time" content="2020-03-19T05:50:51.344Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -330,7 +330,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2020-03-19T13:13:33+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2020-03-19T13:50:51+08:00">
                 2020-03-19
               </time>
             
@@ -391,7 +391,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  232 words
+                  253 words
                 </span>
               
 
@@ -433,6 +433,8 @@
 <li>首先！！执行<code>./clash -d .</code>得到的config.yaml文件的内容，这个才是我们所需要的配置文件。我们将供应商购买得到的.yml文件的内容复制到这个文件夹里。。</li>
 <li>由于速度问题(你又懂的)，<code>./clash -d .</code>得到的Counry.mmdb文件的内容不全，我们可以自行去网上下载现成的Country.mmdb文件。这里给出一个能下载的地方<a href="https://github.com/JSEcoin/server/blob/master/geoip/GeoIP2-Country.mmdb" target="_blank" rel="noopener">点击这里</a>，将得到的GeoIp2-Country.mmdb更名为Country.mmdb即可。</li>
 </ul>
+<h3 id="让我的clash后台运行"><a href="#让我的clash后台运行" class="headerlink" title="让我的clash后台运行"></a>让我的clash后台运行</h3><p><code>nohup ./clash -d . &amp;</code></p>
+<h3 id="杀死我的clash"><a href="#杀死我的clash" class="headerlink" title="杀死我的clash"></a>杀死我的clash</h3><p><code>ps -ef | grep name</code><br><code>kill -9 id</code></p>
 
       
     </div>
@@ -602,7 +604,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#clash配置问题"><span class="nav-number">1.</span> <span class="nav-text">clash配置问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#clash配置问题"><span class="nav-number">1.</span> <span class="nav-text">clash配置问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#让我的clash后台运行"><span class="nav-number">2.</span> <span class="nav-text">让我的clash后台运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#杀死我的clash"><span class="nav-number">3.</span> <span class="nav-text">杀死我的clash</span></a></li></ol></div>
             
 
           </div>
