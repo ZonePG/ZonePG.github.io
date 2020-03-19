@@ -6,7 +6,7 @@
     <content><![CDATA[<h3 id="clash配置问题"><a href="#clash配置问题" class="headerlink" title="clash配置问题"></a>clash配置问题</h3><p>由于想学习Go语言(配置个环境都被qiang了)，恩，外面的世界必不可少。。你懂的<br>除了ubuntu，自己的ios、win10都能探索世界了。。ubuntu捣鼓了一周，而自己日常使用ubuntu，clash问题硬是没有解决，困惑不已。<br>今天上午加中午，各种尝试，github搜索各种issue，终于从坑里爬出来了，记录一下。</p>
 <ul>
 <li>首先！！执行<code>./clash -d .</code>得到的config.yaml文件的内容，这个才是我们所需要的配置文件。我们将供应商购买得到的.yml文件的内容复制到这个文件夹里。。</li>
-<li>由于速度问题(你又懂的)，<code>./clash -d .</code>得到的Counry.mmdb文件的内容不全，我们可以自行去网上下载现成的Country.mmdb文件。这里给出一个能下载的地方(<a href="https://github.com/JSEcoin/server/blob/master/geoip/GeoIP2-Country.mmdb)，将得到的GeoIp2-Country.mmdb更名为Country.mmdb即可。" target="_blank" rel="noopener">https://github.com/JSEcoin/server/blob/master/geoip/GeoIP2-Country.mmdb)，将得到的GeoIp2-Country.mmdb更名为Country.mmdb即可。</a></li>
+<li>由于速度问题(你又懂的)，<code>./clash -d .</code>得到的Counry.mmdb文件的内容不全，我们可以自行去网上下载现成的Country.mmdb文件。这里给出一个能下载的地方<a href="https://github.com/JSEcoin/server/blob/master/geoip/GeoIP2-Country.mmdb" target="_blank" rel="noopener">点击这里</a>，将得到的GeoIp2-Country.mmdb更名为Country.mmdb即可。</li>
 </ul>
 ]]></content>
       <categories>
