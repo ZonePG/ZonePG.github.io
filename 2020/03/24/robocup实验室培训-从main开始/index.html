@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="题目：现在有m(m&amp;lt;=24)根火柴棍，拼出A+B=C的等式。 注意： 加号与等号各自需要两根火柴棍 A不等于B,则A+B=C与B+A=C是为不同的等式 所有火柴棍必须都用上   分析：m &amp;lt;= 24，除去‘+’，‘=’占用的四根火柴，还剩下20根火柴，最多可以有20个1。因此，A、B、C任何一个数都不能超过111112345678910111213141516171819202122">
+<meta name="description" content="Intro本文档搭配本人上传的B站视频一起食用。比赛环境搭建球队代码编译运行与一些基础概念已经在群文件中有叙述。接下来我们简要分析一下ut的基础代码。 我的演示过程均在终端与vim环境下进行，因其简洁美观。注意右边窗口是我们的命令行。我开了两个终端窗口，此窗口用来解释文档，另外一个窗口用来查看代码。 大家可以也选择vscode 进行球队代码开发。我选择Kazam进行录制，由于外放麦克风杂音太大，选">
 <meta name="keywords" content="邹鹏的博客,邹鹏,博客">
 <meta property="og:type" content="article">
-<meta property="og:title" content="火柴棍问题">
-<meta property="og:url" content="https:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;24&#x2F;%E7%81%AB%E6%9F%B4%E6%A3%8D%E9%97%AE%E9%A2%98&#x2F;index.html">
+<meta property="og:title" content="robocup实验室培训-从main开始.md">
+<meta property="og:url" content="https:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;24&#x2F;robocup%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9F%B9%E8%AE%AD-%E4%BB%8Emain%E5%BC%80%E5%A7%8B&#x2F;index.html">
 <meta property="og:site_name" content="ZONEPG BLOG">
-<meta property="og:description" content="题目：现在有m(m&amp;lt;=24)根火柴棍，拼出A+B=C的等式。 注意： 加号与等号各自需要两根火柴棍 A不等于B,则A+B=C与B+A=C是为不同的等式 所有火柴棍必须都用上   分析：m &amp;lt;= 24，除去‘+’，‘=’占用的四根火柴，还剩下20根火柴，最多可以有20个1。因此，A、B、C任何一个数都不能超过111112345678910111213141516171819202122">
+<meta property="og:description" content="Intro本文档搭配本人上传的B站视频一起食用。比赛环境搭建球队代码编译运行与一些基础概念已经在群文件中有叙述。接下来我们简要分析一下ut的基础代码。 我的演示过程均在终端与vim环境下进行，因其简洁美观。注意右边窗口是我们的命令行。我开了两个终端窗口，此窗口用来解释文档，另外一个窗口用来查看代码。 大家可以也选择vscode 进行球队代码开发。我选择Kazam进行录制，由于外放麦克风杂音太大，选">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-02-13T08:30:21.270Z">
+<meta property="og:updated_time" content="2020-03-24T07:05:09.003Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="https://yoursite.com/2019/11/24/火柴棍问题/"/>
+  <link rel="canonical" href="https://yoursite.com/2020/03/24/robocup实验室培训-从main开始/"/>
 
 
 
 
 
-  <title>火柴棍问题 | ZONEPG BLOG</title>
+  <title>robocup实验室培训-从main开始.md | ZONEPG BLOG</title>
   
 
 
@@ -285,7 +285,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yoursite.com/2019/11/24/%E7%81%AB%E6%9F%B4%E6%A3%8D%E9%97%AE%E9%A2%98/">
+    <link itemprop="mainEntityOfPage" href="https://yoursite.com/2020/03/24/robocup%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9F%B9%E8%AE%AD-%E4%BB%8Emain%E5%BC%80%E5%A7%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZonePG">
@@ -302,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">火柴棍问题</h1>
+          <h1 class="post-title" itemprop="name headline">robocup实验室培训-从main开始.md</h1>
         
 
         <div class="post-meta">
@@ -314,8 +314,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-24T13:54:54+08:00">
-                2019-11-24
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-24T12:00:00+08:00">
+                2020-03-24
               </time>
             
 
@@ -330,8 +330,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2020-02-13T16:30:21+08:00">
-                2020-02-13
+              <time title="Post modified" itemprop="dateModified" datetime="2020-03-24T15:05:09+08:00">
+                2020-03-24
               </time>
             
           </span>
@@ -349,8 +349,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
+                  <a href="/categories/Data-Structures-and-Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Data Structures and Algorithm</span>
                   </a>
                 </span>
 
@@ -366,7 +366,7 @@
 
           
           
-             <span id="/2019/11/24/%E7%81%AB%E6%9F%B4%E6%A3%8D%E9%97%AE%E9%A2%98/" class="leancloud_visitors" data-flag-title="火柴棍问题">
+             <span id="/2020/03/24/robocup%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9F%B9%E8%AE%AD-%E4%BB%8Emain%E5%BC%80%E5%A7%8B/" class="leancloud_visitors" data-flag-title="robocup实验室培训-从main开始.md">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -391,7 +391,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  305 words
+                  587 words
                 </span>
               
 
@@ -407,7 +407,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1 min
+                  2 min
                 </span>
               
             </div>
@@ -428,17 +428,16 @@
       
 
       
-        <ul>
-<li>题目：现在有m(m&lt;=24)根火柴棍，拼出A+B=C的等式。</li>
-<li>注意：<ol>
-<li>加号与等号各自需要两根火柴棍</li>
-<li>A不等于B,则A+B=C与B+A=C是为不同的等式</li>
-<li>所有火柴棍必须都用上</li>
-</ol>
-</li>
-<li>分析：m &lt;= 24，除去‘+’，‘=’占用的四根火柴，还剩下20根火柴，最多可以有20个1。因此，A、B、C任何一个数都不能超过1111<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 一个函数，返回某个数对应的火柴数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> num = <span class="number">0</span>;    <span class="comment">// 用来计数的变量</span></span><br><span class="line">    <span class="comment">// 用一个数组来记录0-9每个数字需要用多少根火柴棍</span></span><br><span class="line">    <span class="keyword">int</span> f[<span class="number">10</span>] = &#123;<span class="number">6</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="number">6</span>&#125;;</span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">    &#123;</span><br><span class="line">        num += f[x % <span class="number">10</span>];</span><br><span class="line">        x /= <span class="number">10</span>;</span><br><span class="line">    &#125; <span class="keyword">while</span> (x);</span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a, b, c, m, sum = <span class="number">0</span>; <span class="comment">// m为火柴棍的个数，sum是等式成立数量</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; m;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (a = <span class="number">0</span>; a &lt;= <span class="number">1111</span>; a++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (b = <span class="number">0</span>; b &lt;= <span class="number">1111</span>; b++)</span><br><span class="line">        &#123;</span><br><span class="line">            c = a + b;</span><br><span class="line">            <span class="keyword">if</span> (fun(a) + fun(b) + fun(c) == m<span class="number">-4</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="string">'+'</span> &lt;&lt; b &lt;&lt; <span class="string">'='</span> &lt;&lt; c &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">                sum++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"一共可以拼出"</span> &lt;&lt; sum &lt;&lt; <span class="string">"个不同的等式"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+        <h4 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h4><p>本文档搭配本人上传的B站视频一起食用。<br>比赛环境搭建球队代码编译运行与一些基础概念已经在群文件中有叙述。<br>接下来我们简要分析一下ut的基础代码。</p>
+<p>我的演示过程均在终端与vim环境下进行，因其简洁美观。注意右边窗口是我们的命令行。<br>我开了两个终端窗口，此窗口用来解释文档，另外一个窗口用来查看代码。</p>
+<p>大家可以也选择vscode 进行球队代码开发。我选择Kazam进行录制，由于外放麦克风杂音太大，选择用耳机的话我的ubuntu连不上我的蓝牙耳机，弄了一会目前这个问题还没解决。所以以下我用文档结合方式进行演示教学。该教学文档后续会上传到我的个人博客网站：zonepg.com上。</p>
+<p>在这之前，希望大家仔细阅读球队代码里面的各种.md文件，也就是markdown文件，里面有整个球队代码项目的一些基本内容。以及群文件相关平台手册以及比赛规则。下面简单看一下各种md文件。</p>
+<p>ps: 第一次录制教学视频，由于个人技术水平有限与内容表达有不太清晰的地方，望大家见谅，大家有问题可以在群里提出</p>
+<h4 id="sh脚本运行我们的可执行"><a href="#sh脚本运行我们的可执行" class="headerlink" title=".sh脚本运行我们的可执行"></a>.sh脚本运行我们的可执行</h4><p>在我们读到ReadOptions时，<code>void ReadOptions(int argc, char *argv[]</code>，分析如下。</p>
+<p>在编译得到我们的可执行文件后，我们可以通过诸如 .sh(shell脚本文件)运行我们的可执行，命令行运行一系列里面的一系列命令。</p>
+<p>.sh脚本里面在运行可执行文件agentspark(相当于你们平时的.exe文件)，执行不同的.sh文件，相当于在运行可执行时传递相应的参数。</p>
+<p>就好比平时写的一些简单的程序，编译得到的exe文件，我们可以在命令中运行这个文件并给他指定相应的参数。只不过这里的shell脚本将这些命令以脚本方式执行。</p>
+<p>我们可以在相应文件目录下执行<code>./start.sh</code>，即可执行我们的程序。</p>
 
       
     </div>
@@ -463,8 +462,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/24/11-24/" rel="next" title="11-24">
-                <i class="fa fa-chevron-left"></i> 11-24
+              <a href="/2020/03/19/clash%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98/" rel="next" title="clash配置问题">
+                <i class="fa fa-chevron-left"></i> clash配置问题
               </a>
             
           </div>
@@ -472,10 +471,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/11/24/DFS%E8%A7%A3%E5%86%B3%E5%85%A8%E6%8E%92%E5%88%97%E9%97%AE%E9%A2%98/" rel="prev" title="DFS解决全排列问题">
-                DFS解决全排列问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -527,8 +522,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -558,7 +562,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -594,6 +598,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Intro"><span class="nav-number">1.</span> <span class="nav-text">Intro</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sh脚本运行我们的可执行"><span class="nav-number">2.</span> <span class="nav-text">.sh脚本运行我们的可执行</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -625,7 +645,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">9.5k</span>
+    <span title="Site words total count">9.8k</span>
   
 </div>
 
