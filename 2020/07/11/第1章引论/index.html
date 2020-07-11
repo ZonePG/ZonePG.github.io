@@ -79,18 +79,19 @@
 
 
 
-<meta name="description" content="编译器和解释器编译器源程序-&amp;gt;(编译器compiler)-&amp;gt;目标程序 (离线offline)输入-&amp;gt;(目标程序)-&amp;gt;输出 解释器源程序+输入 -&amp;gt; (解释器interpreter) -&amp;gt; 输出 (在线online) 编译器结构一种没有优化的编译器结构">
+<meta name="description" content="编译器和解释器编译器源程序-&amp;gt;(编译器compiler)-&amp;gt;目标程序 (离线offline)输入-&amp;gt;(目标程序)-&amp;gt;输出 解释器源程序+输入 -&amp;gt; (解释器interpreter) -&amp;gt; 输出 (在线online) 编译器结构一种没有优化的编译器结构 更复杂的一种编译器结构">
 <meta name="keywords" content="邹鹏的博客,邹鹏,博客">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第 1 章 引论">
 <meta property="og:url" content="https:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;07&#x2F;11&#x2F;%E7%AC%AC1%E7%AB%A0%E5%BC%95%E8%AE%BA&#x2F;index.html">
 <meta property="og:site_name" content="ZONEPG BLOG">
-<meta property="og:description" content="编译器和解释器编译器源程序-&amp;gt;(编译器compiler)-&amp;gt;目标程序 (离线offline)输入-&amp;gt;(目标程序)-&amp;gt;输出 解释器源程序+输入 -&amp;gt; (解释器interpreter) -&amp;gt; 输出 (在线online) 编译器结构一种没有优化的编译器结构">
+<meta property="og:description" content="编译器和解释器编译器源程序-&amp;gt;(编译器compiler)-&amp;gt;目标程序 (离线offline)输入-&amp;gt;(目标程序)-&amp;gt;输出 解释器源程序+输入 -&amp;gt; (解释器interpreter) -&amp;gt; 输出 (在线online) 编译器结构一种没有优化的编译器结构 更复杂的一种编译器结构">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https:&#x2F;&#x2F;yoursite.com&#x2F;picture&#x2F;%E4%B8%80%E7%A7%8D%E6%B2%A1%E6%9C%89%E4%BC%98%E5%8C%96%E7%9A%84%E7%BC%96%E8%AF%91%E5%99%A8%E7%BB%93%E6%9E%84.png">
-<meta property="og:updated_time" content="2020-07-11T06:44:29.540Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;github.com&#x2F;ZonePG&#x2F;myblog-picture&#x2F;blob&#x2F;master&#x2F;%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86&#x2F;%E4%B8%80%E7%A7%8D%E6%B2%A1%E6%9C%89%E4%BC%98%E5%8C%96%E7%9A%84%E7%BC%96%E8%AF%91%E5%99%A8%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;github.com&#x2F;ZonePG&#x2F;myblog-picture&#x2F;blob&#x2F;master&#x2F;%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86&#x2F;%E6%9B%B4%E5%A4%8D%E6%9D%82%E7%9A%84%E4%B8%80%E7%A7%8D%E7%BC%96%E8%AF%91%E5%99%A8%E7%BB%93%E6%9E%84.png">
+<meta property="og:updated_time" content="2020-07-11T07:01:44.306Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;yoursite.com&#x2F;picture&#x2F;%E4%B8%80%E7%A7%8D%E6%B2%A1%E6%9C%89%E4%BC%98%E5%8C%96%E7%9A%84%E7%BC%96%E8%AF%91%E5%99%A8%E7%BB%93%E6%9E%84.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;github.com&#x2F;ZonePG&#x2F;myblog-picture&#x2F;blob&#x2F;master&#x2F;%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86&#x2F;%E4%B8%80%E7%A7%8D%E6%B2%A1%E6%9C%89%E4%BC%98%E5%8C%96%E7%9A%84%E7%BC%96%E8%AF%91%E5%99%A8%E7%BB%93%E6%9E%84.png">
 
 
 
@@ -332,7 +333,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2020-07-11T14:44:29+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2020-07-11T15:01:44+08:00">
                 2020-07-11
               </time>
             
@@ -393,7 +394,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  72 words
+                  83 words
                 </span>
               
 
@@ -432,7 +433,8 @@
       
         <h4 id="编译器和解释器"><a href="#编译器和解释器" class="headerlink" title="编译器和解释器"></a>编译器和解释器</h4><h5 id="编译器"><a href="#编译器" class="headerlink" title="编译器"></a>编译器</h5><p>源程序-&gt;(编译器compiler)-&gt;目标程序 (离线offline)<br>输入-&gt;(目标程序)-&gt;输出</p>
 <h5 id="解释器"><a href="#解释器" class="headerlink" title="解释器"></a>解释器</h5><p>源程序+输入 -&gt; (解释器interpreter) -&gt; 输出 (在线online)</p>
-<h4 id="编译器结构"><a href="#编译器结构" class="headerlink" title="编译器结构"></a>编译器结构</h4><h5 id="一种没有优化的编译器结构"><a href="#一种没有优化的编译器结构" class="headerlink" title="一种没有优化的编译器结构"></a>一种没有优化的编译器结构</h5><p><img src="/picture/%E4%B8%80%E7%A7%8D%E6%B2%A1%E6%9C%89%E4%BC%98%E5%8C%96%E7%9A%84%E7%BC%96%E8%AF%91%E5%99%A8%E7%BB%93%E6%9E%84.png" alt="avatar"></p>
+<h4 id="编译器结构"><a href="#编译器结构" class="headerlink" title="编译器结构"></a>编译器结构</h4><h5 id="一种没有优化的编译器结构"><a href="#一种没有优化的编译器结构" class="headerlink" title="一种没有优化的编译器结构"></a>一种没有优化的编译器结构</h5><p><img src="https://github.com/ZonePG/myblog-picture/blob/master/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/%E4%B8%80%E7%A7%8D%E6%B2%A1%E6%9C%89%E4%BC%98%E5%8C%96%E7%9A%84%E7%BC%96%E8%AF%91%E5%99%A8%E7%BB%93%E6%9E%84.png" alt="a"></p>
+<h5 id="更复杂的一种编译器结构"><a href="#更复杂的一种编译器结构" class="headerlink" title="更复杂的一种编译器结构"></a>更复杂的一种编译器结构</h5><p><img src="https://github.com/ZonePG/myblog-picture/blob/master/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/%E6%9B%B4%E5%A4%8D%E6%9D%82%E7%9A%84%E4%B8%80%E7%A7%8D%E7%BC%96%E8%AF%91%E5%99%A8%E7%BB%93%E6%9E%84.png" alt="b"></p>
 
       
     </div>
@@ -602,7 +604,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#编译器和解释器"><span class="nav-number">1.</span> <span class="nav-text">编译器和解释器</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#编译器"><span class="nav-number">1.1.</span> <span class="nav-text">编译器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解释器"><span class="nav-number">1.2.</span> <span class="nav-text">解释器</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编译器结构"><span class="nav-number">2.</span> <span class="nav-text">编译器结构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#一种没有优化的编译器结构"><span class="nav-number">2.1.</span> <span class="nav-text">一种没有优化的编译器结构</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#编译器和解释器"><span class="nav-number">1.</span> <span class="nav-text">编译器和解释器</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#编译器"><span class="nav-number">1.1.</span> <span class="nav-text">编译器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解释器"><span class="nav-number">1.2.</span> <span class="nav-text">解释器</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编译器结构"><span class="nav-number">2.</span> <span class="nav-text">编译器结构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#一种没有优化的编译器结构"><span class="nav-number">2.1.</span> <span class="nav-text">一种没有优化的编译器结构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#更复杂的一种编译器结构"><span class="nav-number">2.2.</span> <span class="nav-text">更复杂的一种编译器结构</span></a></li></ol></li></ol></div>
             
 
           </div>

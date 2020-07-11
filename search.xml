@@ -5,7 +5,8 @@
     <url>/2020/07/11/%E7%AC%AC1%E7%AB%A0%E5%BC%95%E8%AE%BA/</url>
     <content><![CDATA[<h4 id="编译器和解释器"><a href="#编译器和解释器" class="headerlink" title="编译器和解释器"></a>编译器和解释器</h4><h5 id="编译器"><a href="#编译器" class="headerlink" title="编译器"></a>编译器</h5><p>源程序-&gt;(编译器compiler)-&gt;目标程序 (离线offline)<br>输入-&gt;(目标程序)-&gt;输出</p>
 <h5 id="解释器"><a href="#解释器" class="headerlink" title="解释器"></a>解释器</h5><p>源程序+输入 -&gt; (解释器interpreter) -&gt; 输出 (在线online)</p>
-<h4 id="编译器结构"><a href="#编译器结构" class="headerlink" title="编译器结构"></a>编译器结构</h4><h5 id="一种没有优化的编译器结构"><a href="#一种没有优化的编译器结构" class="headerlink" title="一种没有优化的编译器结构"></a>一种没有优化的编译器结构</h5><p><img src="/picture/%E4%B8%80%E7%A7%8D%E6%B2%A1%E6%9C%89%E4%BC%98%E5%8C%96%E7%9A%84%E7%BC%96%E8%AF%91%E5%99%A8%E7%BB%93%E6%9E%84.png" alt="avatar"></p>
+<h4 id="编译器结构"><a href="#编译器结构" class="headerlink" title="编译器结构"></a>编译器结构</h4><h5 id="一种没有优化的编译器结构"><a href="#一种没有优化的编译器结构" class="headerlink" title="一种没有优化的编译器结构"></a>一种没有优化的编译器结构</h5><p><img src="https://github.com/ZonePG/myblog-picture/blob/master/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/%E4%B8%80%E7%A7%8D%E6%B2%A1%E6%9C%89%E4%BC%98%E5%8C%96%E7%9A%84%E7%BC%96%E8%AF%91%E5%99%A8%E7%BB%93%E6%9E%84.png" alt="a"></p>
+<h5 id="更复杂的一种编译器结构"><a href="#更复杂的一种编译器结构" class="headerlink" title="更复杂的一种编译器结构"></a>更复杂的一种编译器结构</h5><p><img src="https://github.com/ZonePG/myblog-picture/blob/master/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/%E6%9B%B4%E5%A4%8D%E6%9D%82%E7%9A%84%E4%B8%80%E7%A7%8D%E7%BC%96%E8%AF%91%E5%99%A8%E7%BB%93%E6%9E%84.png" alt="b"></p>
 ]]></content>
       <categories>
         <category>编译原理</category>
