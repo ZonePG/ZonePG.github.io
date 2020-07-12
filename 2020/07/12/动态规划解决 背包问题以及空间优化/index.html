@@ -79,19 +79,16 @@
 
 
 
-<meta name="description" content="编译器和解释器编译器源程序-&amp;gt;(编译器compiler)-&amp;gt;目标程序 (离线offline)输入-&amp;gt;(目标程序)-&amp;gt;输出 解释器源程序+输入 -&amp;gt; (解释器interpreter) -&amp;gt; 输出 (在线online) 编译器结构一种没有优化的编译器结构 更复杂的一种编译器结构">
+<meta name="description" content="背包问题关于背包问题叙述可参考B站学习资料【动态规划】背包问题。下面给出leetcode原题进行分析。 leetcode 1049 最后一块的石头重量II题目描述有一堆石头，每块石头的重量都是正整数。 每一回合，从中选出任意两块石头，然后将它们一起粉碎。假设石头的重量分别为 x 和 y，且 x &amp;lt;= y。那么粉碎的可能结果如下：  如果 x == y，那么两块石头都会被完全粉碎； 如果 x">
 <meta name="keywords" content="邹鹏的博客,邹鹏,博客">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第 1 章 引论">
-<meta property="og:url" content="https:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;07&#x2F;11&#x2F;%E7%AC%AC1%E7%AB%A0%E5%BC%95%E8%AE%BA&#x2F;index.html">
+<meta property="og:title" content="动态规划解决0-1背包问题">
+<meta property="og:url" content="https:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;07&#x2F;12&#x2F;%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%A7%A3%E5%86%B3%20%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98%E4%BB%A5%E5%8F%8A%E7%A9%BA%E9%97%B4%E4%BC%98%E5%8C%96&#x2F;index.html">
 <meta property="og:site_name" content="ZONEPG BLOG">
-<meta property="og:description" content="编译器和解释器编译器源程序-&amp;gt;(编译器compiler)-&amp;gt;目标程序 (离线offline)输入-&amp;gt;(目标程序)-&amp;gt;输出 解释器源程序+输入 -&amp;gt; (解释器interpreter) -&amp;gt; 输出 (在线online) 编译器结构一种没有优化的编译器结构 更复杂的一种编译器结构">
+<meta property="og:description" content="背包问题关于背包问题叙述可参考B站学习资料【动态规划】背包问题。下面给出leetcode原题进行分析。 leetcode 1049 最后一块的石头重量II题目描述有一堆石头，每块石头的重量都是正整数。 每一回合，从中选出任意两块石头，然后将它们一起粉碎。假设石头的重量分别为 x 和 y，且 x &amp;lt;= y。那么粉碎的可能结果如下：  如果 x == y，那么两块石头都会被完全粉碎； 如果 x">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https:&#x2F;&#x2F;github.com&#x2F;ZonePG&#x2F;myblog-picture&#x2F;blob&#x2F;master&#x2F;%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86&#x2F;%E4%B8%80%E7%A7%8D%E6%B2%A1%E6%9C%89%E4%BC%98%E5%8C%96%E7%9A%84%E7%BC%96%E8%AF%91%E5%99%A8%E7%BB%93%E6%9E%84.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;github.com&#x2F;ZonePG&#x2F;myblog-picture&#x2F;blob&#x2F;master&#x2F;%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86&#x2F;%E6%9B%B4%E5%A4%8D%E6%9D%82%E7%9A%84%E4%B8%80%E7%A7%8D%E7%BC%96%E8%AF%91%E5%99%A8%E7%BB%93%E6%9E%84.png">
-<meta property="og:updated_time" content="2020-07-11T07:05:23.872Z">
+<meta property="og:updated_time" content="2020-07-12T15:11:03.366Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;github.com&#x2F;ZonePG&#x2F;myblog-picture&#x2F;blob&#x2F;master&#x2F;%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86&#x2F;%E4%B8%80%E7%A7%8D%E6%B2%A1%E6%9C%89%E4%BC%98%E5%8C%96%E7%9A%84%E7%BC%96%E8%AF%91%E5%99%A8%E7%BB%93%E6%9E%84.png">
 
 
 
@@ -121,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="https://yoursite.com/2020/07/11/第1章引论/"/>
+  <link rel="canonical" href="https://yoursite.com/2020/07/12/动态规划解决 背包问题以及空间优化/"/>
 
 
 
 
 
-  <title>第 1 章 引论 | ZONEPG BLOG</title>
+  <title>动态规划解决0-1背包问题 | ZONEPG BLOG</title>
   
 
 
@@ -288,7 +285,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yoursite.com/2020/07/11/%E7%AC%AC1%E7%AB%A0%E5%BC%95%E8%AE%BA/">
+    <link itemprop="mainEntityOfPage" href="https://yoursite.com/2020/07/12/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%A7%A3%E5%86%B3%20%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98%E4%BB%A5%E5%8F%8A%E7%A9%BA%E9%97%B4%E4%BC%98%E5%8C%96/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZonePG">
@@ -305,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">第 1 章 引论</h1>
+          <h1 class="post-title" itemprop="name headline">动态规划解决0-1背包问题</h1>
         
 
         <div class="post-meta">
@@ -317,8 +314,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-11T12:20:00+08:00">
-                2020-07-11
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-12T22:39:54+08:00">
+                2020-07-12
               </time>
             
 
@@ -333,8 +330,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2020-07-11T15:05:23+08:00">
-                2020-07-11
+              <time title="Post modified" itemprop="dateModified" datetime="2020-07-12T23:11:03+08:00">
+                2020-07-12
               </time>
             
           </span>
@@ -352,8 +349,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" itemprop="url" rel="index">
-                    <span itemprop="name">编译原理</span>
+                  <a href="/categories/Data-Structures-and-Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Data Structures and Algorithm</span>
                   </a>
                 </span>
 
@@ -369,7 +366,7 @@
 
           
           
-             <span id="/2020/07/11/%E7%AC%AC1%E7%AB%A0%E5%BC%95%E8%AE%BA/" class="leancloud_visitors" data-flag-title="第 1 章 引论">
+             <span id="/2020/07/12/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%A7%A3%E5%86%B3%20%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98%E4%BB%A5%E5%8F%8A%E7%A9%BA%E9%97%B4%E4%BC%98%E5%8C%96/" class="leancloud_visitors" data-flag-title="动态规划解决0-1背包问题">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -394,7 +391,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  83 words
+                  1.3k words
                 </span>
               
 
@@ -410,7 +407,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1 min
+                  6 min
                 </span>
               
             </div>
@@ -431,10 +428,38 @@
       
 
       
-        <h4 id="编译器和解释器"><a href="#编译器和解释器" class="headerlink" title="编译器和解释器"></a>编译器和解释器</h4><h5 id="编译器"><a href="#编译器" class="headerlink" title="编译器"></a>编译器</h5><p>源程序-&gt;(编译器compiler)-&gt;目标程序 (离线offline)<br>输入-&gt;(目标程序)-&gt;输出</p>
-<h5 id="解释器"><a href="#解释器" class="headerlink" title="解释器"></a>解释器</h5><p>源程序+输入 -&gt; (解释器interpreter) -&gt; 输出 (在线online)</p>
-<h4 id="编译器结构"><a href="#编译器结构" class="headerlink" title="编译器结构"></a>编译器结构</h4><h5 id="一种没有优化的编译器结构"><a href="#一种没有优化的编译器结构" class="headerlink" title="一种没有优化的编译器结构"></a>一种没有优化的编译器结构</h5><p><img src="https://github.com/ZonePG/myblog-picture/blob/master/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/%E4%B8%80%E7%A7%8D%E6%B2%A1%E6%9C%89%E4%BC%98%E5%8C%96%E7%9A%84%E7%BC%96%E8%AF%91%E5%99%A8%E7%BB%93%E6%9E%84.png" alt="a"></p>
-<h5 id="更复杂的一种编译器结构"><a href="#更复杂的一种编译器结构" class="headerlink" title="更复杂的一种编译器结构"></a>更复杂的一种编译器结构</h5><p><img src="https://github.com/ZonePG/myblog-picture/blob/master/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/%E6%9B%B4%E5%A4%8D%E6%9D%82%E7%9A%84%E4%B8%80%E7%A7%8D%E7%BC%96%E8%AF%91%E5%99%A8%E7%BB%93%E6%9E%84.png" alt="b"></p>
+        <h4 id="背包问题"><a href="#背包问题" class="headerlink" title="背包问题"></a>背包问题</h4><p>关于背包问题叙述可参考B站学习资料<a href="https://www.bilibili.com/video/BV1K4411X766?from=search&seid=6376287834019449594" target="_blank" rel="noopener">【动态规划】背包问题</a>。下面给出leetcode原题进行分析。</p>
+<h4 id="leetcode-1049-最后一块的石头重量II"><a href="#leetcode-1049-最后一块的石头重量II" class="headerlink" title="leetcode 1049 最后一块的石头重量II"></a>leetcode 1049 最后一块的石头重量II</h4><h5 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h5><p>有一堆石头，每块石头的重量都是正整数。</p>
+<p>每一回合，从中选出任意两块石头，然后将它们一起粉碎。假设石头的重量分别为 x 和 y，且 x &lt;= y。那么粉碎的可能结果如下：</p>
+<ul>
+<li>如果 x == y，那么两块石头都会被完全粉碎；</li>
+<li>如果 x != y，那么重量为 x 的石头将会完全粉碎，而重量为 y 的石头新重量为 y-x。</li>
+</ul>
+<p>最后，最多只会剩下一块石头。返回此石头最小的可能重量。如果没有石头剩下，就返回 0。</p>
+<p><strong>示例</strong><br>输入：[2,7,4,1,8,1]<br>输出：1<br>解释：<br>组合 2 和 4，得到 2，所以数组转化为 [2,7,1,8,1]，<br>组合 7 和 8，得到 1，所以数组转化为 [2,1,1,1]，<br>组合 2 和 1，得到 1，所以数组转化为 [1,1,1]，<br>组合 1 和 1，得到 0，所以数组转化为 [1]，这就是最优值。</p>
+<h5 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h5><ul>
+<li>将数分为两堆，使其中一堆最为接近sum / 2, 从而转化为0-1背包问题。问题即为石头放或不放进背包使得背包容量最大（背包容量：sum / 2）<h5 id="0-1背包解法"><a href="#0-1背包解法" class="headerlink" title="0-1背包解法"></a>0-1背包解法</h5>状态转移方程为:<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dp[<span class="string">i</span>][<span class="symbol">j</span>] = max(dp[<span class="string">i-1</span>][<span class="symbol">j</span>], dp[<span class="string">i-1</span>][<span class="symbol">j-stone[i</span>]] + stone[i])</span><br></pre></td></tr></table></figure>
+<h5 id="空间优化（使用滚动数组）"><a href="#空间优化（使用滚动数组）" class="headerlink" title="空间优化（使用滚动数组）"></a>空间优化（使用滚动数组）</h5><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dp[<span class="built_in">j</span>] = <span class="built_in">max</span>(dp[<span class="built_in">j</span>], dp[<span class="built_in">j</span>-stone[<span class="built_in">i</span>]] + stone[<span class="built_in">i</span>])</span><br></pre></td></tr></table></figure>
+需要注意的地方是，如果我们从左向右更新，在更新<code>dp[j]</code>时，所用到的<code>dp[j-stones[i]]</code>实际上是<code>dp[i][j-stones[i]]</code>，（因为从左到右的过程中，<code>dp[j-stones[i]]</code>先于<code>dp[j]</code>更新，更新后就相当于变成了<code>dp[i][j-stones[i]])</code>。解决的方法是从右向左更新，这样<code>dp[j]</code>更新的时候，使用到的<code>dp[j-stones[i]]</code>是没更新的，相当于<code>dp[i-1][j-stones[i]]</code>。</li>
+</ul>
+<h5 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">lastStoneWeightII</span> <span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; stones)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 未优化版本</span></span><br><span class="line">        <span class="comment">// int len = stones.size();</span></span><br><span class="line">        <span class="comment">// int sum = accumulate(stones.begin(),stones.end(), 0);</span></span><br><span class="line">        <span class="comment">// int maxCapacity = sum / 2;</span></span><br><span class="line">        <span class="comment">// vector&lt;vector&lt;int&gt;&gt; dp(len+1, vector&lt;int&gt;(maxCapacity + 1, 0));</span></span><br><span class="line">        <span class="comment">// for (int i = 1; i &lt;= len; i++)</span></span><br><span class="line">        <span class="comment">// &#123;</span></span><br><span class="line">        <span class="comment">//     for (int j = 1; j &lt;= maxCapacity; j++)</span></span><br><span class="line">        <span class="comment">//         if (j &gt;= stones[i - 1])</span></span><br><span class="line">        <span class="comment">//             dp[i][j] = max(dp[i-1][j], stones[i-1]+dp[i-1][j-stones[i-1]]);</span></span><br><span class="line">        <span class="comment">//         else</span></span><br><span class="line">        <span class="comment">//             dp[i][j] = dp[i-1][j];</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line">        <span class="comment">// return sum - 2*dp[len][maxCapacity];</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 空间优化版本</span></span><br><span class="line">        <span class="keyword">int</span> len = stones.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">int</span> sum = accumulate(stones.<span class="built_in">begin</span>(), stones.<span class="built_in">end</span>(), <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">int</span> maxCapacity = sum / <span class="number">2</span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; dp(maxCapacity+<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = maxCapacity; j &gt;= stones[i]; j--) <span class="comment">// important</span></span><br><span class="line">                dp[j] = <span class="built_in">max</span>(dp[j], dp[j - stones[i]] + stones[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum - <span class="number">2</span> * dp[maxCapacity];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="拓展：leetcode-474-一和零"><a href="#拓展：leetcode-474-一和零" class="headerlink" title="拓展：leetcode 474 一和零"></a>拓展：leetcode 474 一和零</h4><h5 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h5><p>在计算机界中，我们总是追求用有限的资源获取最大的收益。</p>
+<p>现在，假设你分别支配着 m 个 0 和 n 个 1。另外，还有一个仅包含 0 和 1 字符串的数组。</p>
+<p>你的任务是使用给定的 m 个 0 和 n 个 1 ，找到能拼出存在于数组中的字符串的最大数量。每个 0 和 1 至多被使用一次。</p>
+<p>注意:</p>
+<ul>
+<li>给定 0 和 1 的数量都不会超过 100。</li>
+<li>给定字符串数组的长度不会超过 600。</li>
+</ul>
+<p>示例1：</p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入: <span class="attr">Array</span> = &#123;<span class="string">"10"</span>, <span class="string">"0001"</span>, <span class="string">"111001"</span>, <span class="string">"1"</span>, <span class="string">"0"</span>&#125;, <span class="attr">m</span> = <span class="number">5</span>, <span class="attr">n</span> = <span class="number">3</span></span><br><span class="line">输出: <span class="number">4</span></span><br><span class="line"></span><br><span class="line">解释: 总共 <span class="number">4</span> 个字符串可以通过 <span class="number">5</span> 个 <span class="number">0</span> 和 <span class="number">3</span> 个 <span class="number">1</span> 拼出，即 <span class="string">"10"</span>,<span class="string">"0001"</span>,<span class="string">"1"</span>,<span class="string">"0"</span> 。</span><br></pre></td></tr></table></figure>
+<p>示例2：</p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入: <span class="attr">Array</span> = &#123;<span class="string">"10"</span>, <span class="string">"0"</span>, <span class="string">"1"</span>&#125;, <span class="attr">m</span> = <span class="number">1</span>, <span class="attr">n</span> = <span class="number">1</span></span><br><span class="line">输出: <span class="number">2</span></span><br><span class="line"></span><br><span class="line">解释: 你可以拼出 <span class="string">"10"</span>，但之后就没有剩余数字了。更好的选择是拼出 <span class="string">"0"</span> 和 <span class="string">"1"</span> 。</span><br></pre></td></tr></table></figure>
+<h5 id="算法分析-1"><a href="#算法分析-1" class="headerlink" title="算法分析"></a>算法分析</h5><ul>
+<li>定义状态：<code>dp[i][j][k]</code>表示输入字符串在子区间 [0, i] 能够使用 j 个 0 和 k 个 1 的字符串的最大数量。可见此题扩展到了三维数组。</li>
+<li>状态转移方程：<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dp[<span class="string">i</span>][<span class="symbol">j</span>][<span class="string">k</span>] = max(dp[<span class="string">i-1</span>][<span class="symbol">j</span>][<span class="string">k</span>], dp[<span class="string">i-1</span>][<span class="symbol">j-zeros</span>][<span class="string">k-ones</span>] + 1)</span><br></pre></td></tr></table></figure>
+<h5 id="空间优化"><a href="#空间优化" class="headerlink" title="空间优化"></a>空间优化</h5>同理上述问题,使用滚动数组进行空间优化。<h5 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; countZeroAndOne(<span class="keyword">const</span> <span class="built_in">string</span> &amp;strs) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ret(<span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;c : strs) &#123;</span><br><span class="line">            ret[c-<span class="string">'0'</span>]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findMaxForm</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; strs, <span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// int l = strs.size();</span></span><br><span class="line">        <span class="comment">// vector&lt;vector&lt;int&gt;&gt; tmp(m + 1, vector&lt;int&gt;(n + 1, 0));</span></span><br><span class="line">        <span class="comment">// vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt; dp(l + 1, tmp);</span></span><br><span class="line">        <span class="comment">// for (int i = 1; i &lt;= l; i++)</span></span><br><span class="line">        <span class="comment">// &#123;</span></span><br><span class="line">        <span class="comment">//     vector&lt;int&gt; cnt = countZeroAndOne(strs[i-1]);</span></span><br><span class="line">        <span class="comment">//     int zeros = cnt[0];</span></span><br><span class="line">        <span class="comment">//     int ones = cnt[1];</span></span><br><span class="line">        <span class="comment">//     for (int j = 0; j &lt;= m; j++)</span></span><br><span class="line">        <span class="comment">//     &#123;</span></span><br><span class="line">        <span class="comment">//         for (int k = 0; k &lt;= n; k++)</span></span><br><span class="line">        <span class="comment">//         &#123;</span></span><br><span class="line">        <span class="comment">//             if (j &gt;= zeros &amp;&amp; k &gt;= ones)</span></span><br><span class="line">        <span class="comment">//                 dp[i][j][k] = max(dp[i-1][j][k], dp[i-1][j-zeros][k-ones] + 1);</span></span><br><span class="line">        <span class="comment">//             else</span></span><br><span class="line">        <span class="comment">//                 dp[i][j][k] = dp[i-1][j][k];</span></span><br><span class="line">        <span class="comment">//         &#125;</span></span><br><span class="line">        <span class="comment">//     &#125;</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line">        <span class="comment">// return dp[l][m][n];</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 空间优化版本</span></span><br><span class="line">        <span class="keyword">int</span> l = strs.<span class="built_in">size</span>();</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; dp(m + <span class="number">1</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(n + <span class="number">1</span>, <span class="number">0</span>));</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= l; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; cnt = countZeroAndOne(strs[i<span class="number">-1</span>]);</span><br><span class="line">            <span class="keyword">int</span> zeros = cnt[<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">int</span> ones = cnt[<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = m; j &gt;= zeros; j--)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> k = n; k &gt;= ones; k--)</span><br><span class="line">                &#123;</span><br><span class="line">                    dp[j][k] = <span class="built_in">max</span>(dp[j][k], dp[j-zeros][k-ones] + <span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[m][n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ul>
 
       
     </div>
@@ -559,7 +584,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -604,7 +629,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#编译器和解释器"><span class="nav-number">1.</span> <span class="nav-text">编译器和解释器</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#编译器"><span class="nav-number">1.1.</span> <span class="nav-text">编译器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解释器"><span class="nav-number">1.2.</span> <span class="nav-text">解释器</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编译器结构"><span class="nav-number">2.</span> <span class="nav-text">编译器结构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#一种没有优化的编译器结构"><span class="nav-number">2.1.</span> <span class="nav-text">一种没有优化的编译器结构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#更复杂的一种编译器结构"><span class="nav-number">2.2.</span> <span class="nav-text">更复杂的一种编译器结构</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#背包问题"><span class="nav-number">1.</span> <span class="nav-text">背包问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#leetcode-1049-最后一块的石头重量II"><span class="nav-number">2.</span> <span class="nav-text">leetcode 1049 最后一块的石头重量II</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#题目描述"><span class="nav-number">2.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#算法分析"><span class="nav-number">2.2.</span> <span class="nav-text">算法分析</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#0-1背包解法"><span class="nav-number">2.3.</span> <span class="nav-text">0-1背包解法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#空间优化（使用滚动数组）"><span class="nav-number">2.4.</span> <span class="nav-text">空间优化（使用滚动数组）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#实现代码"><span class="nav-number">2.5.</span> <span class="nav-text">实现代码</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#拓展：leetcode-474-一和零"><span class="nav-number">3.</span> <span class="nav-text">拓展：leetcode 474 一和零</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题描述"><span class="nav-number">3.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#算法分析-1"><span class="nav-number">3.2.</span> <span class="nav-text">算法分析</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#空间优化"><span class="nav-number">3.3.</span> <span class="nav-text">空间优化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#算法实现"><span class="nav-number">3.4.</span> <span class="nav-text">算法实现</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -642,7 +667,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">14.5k</span>
+    <span title="Site words total count">15.7k</span>
   
 </div>
 
